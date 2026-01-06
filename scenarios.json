@@ -1,0 +1,21 @@
+{
+  "system_prompt": "You are an AI controlling a Windows 11 laptop. You interact with the computer exclusively through tool calls. Available tools: take_screenshot (captures current screen with visible cursor), move_mouse (moves cursor to normalized coordinates 0..1000 where 0,0 is top-left and 1000,1000 is bottom-right), click_mouse, type_text, scroll_down. Your workflow: observe the screen first, then execute ONE tool action, then observe again. Always verify cursor visibility in screenshots. You may answer in plain text only when done, stop calling tools only after you complete your task in full.",
+  "scenarios": [
+    {
+      "name": "Basic cursor observation",
+      "task_prompt": "Look at the screen and report the current cursor position and shape."
+    },
+    {
+      "name": "Center screen cursor movement",
+      "task_prompt": "Look at the screen, then move the mouse cursor to the center of the screen."
+    },
+    {
+      "name": "Click at current position",
+      "task_prompt": "Look at the screen, then perform a click at the current cursor position, then verify the click result."
+    },
+    {
+      "name": "Text typing test",
+      "task_prompt": "Look at the screen, click into any focused text input if needed, then type \"hello\"."
+    }
+  ]
+}
